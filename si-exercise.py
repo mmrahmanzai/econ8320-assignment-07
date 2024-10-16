@@ -28,19 +28,19 @@ def collectLegoSets(url):
 
     #price
     try:
-      row.append(float(re.search(r'(\u20AC)(\d+[.]\d{2})', a.find('dt', text="RRP").find_next_sibling().text).groups()[1]))
+      row.append(float(re.search(r'(\u20AC)(\d+[.]\d{2})', a.find('dt', string="RRP").find_next_sibling().text).groups()[1]))
     except:
       row.append(np.nan)
 
     #pieces
     try:
-      row.append(int(re.search(r'(\d+)', a.find('dt', text="Pieces").find_next_sibling().text).groups()[0]))
+      row.append(int(re.search(r'(\d+)', a.find('dt', string="Pieces").find_next_sibling().text).groups()[0]))
     except:
       row.append(np.nan)
 
     #minifigs
     try:
-      row.append(int(re.search(r'(\d+)', a.find('dt', text="Minifigs").find_next_sibling().text).groups()[0]))
+      row.append(int(re.search(r'(\d+)', a.find('dt', string="Minifigs").find_next_sibling().text).groups()[0]))
     except:
       row.append(np.nan)
 
