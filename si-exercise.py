@@ -45,7 +45,7 @@ def collectLegoSets(url):
       row.append(np.nan)
 
     data.append(row)
-  newData = pd.DataFrame(data, columns = ['set', 'price_euro', 'pieces', 'minifigs'])
+  newData = pd.DataFrame(data, columns = ['Set', 'Price_Euro', 'Pieces', 'Minifigs'])
 
   try:
     nextPage = parsed.find('li', class_="next").a['href']
